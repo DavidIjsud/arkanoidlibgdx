@@ -38,7 +38,7 @@ public class Drop extends ApplicationAdapter {
 		this.yDir = 5;
 
 		this.ballImage = new Texture( Gdx.files.internal("bolita.png") );
-		this.brickImage = new Texture( Gdx.files.internal( "ladrillo.png" ) );
+		this.brickImage = new Texture( Gdx.files.internal( "pared-ladrillo.png" ) );
 		this.ball = new Sprite(this.ballImage);
 
 		this.ball.setX( 500 );
@@ -56,6 +56,7 @@ public class Drop extends ApplicationAdapter {
 			  newBall.setX(  j * 55 + 220 );
 			  newBall.setY( i * 35 + 200 );
 		      this.listaBricks.add(newBall);
+
 			}
 		}
 	}
@@ -73,6 +74,7 @@ public class Drop extends ApplicationAdapter {
 
 		  this.ball.setX( this.ball.getX() + this.xDir );
 		  this.ball.setY( this.ball.getY() + this.yDir );
+
 		  if( this.ball.getX() >= Comunes.WIDTH - this.ball.getWidth() || this.ball.getX() <= 0  ){
 		  		this.xDir = this.xDir * (-1);
 		  }
@@ -95,21 +97,10 @@ public class Drop extends ApplicationAdapter {
 			if (collision) {
 				it.remove();
 				this.yDir = this.yDir * (-1);
+				return;
 			}
 
 		}
-
-
-//		for (Sprite s : this.listaBricks) {
-//			Rectangle rectBall = this.ball.getBoundingRectangle();
-//			Rectangle rectBrick = s.getBoundingRectangle();
-//			boolean collision = rectBall.overlaps(rectBrick);
-//			if (collision) {
-//				this.listaBricks.clear();
-//				this.yDir = this.yDir * (-1);
-//			}
-//		}
-
 
 	}
 
