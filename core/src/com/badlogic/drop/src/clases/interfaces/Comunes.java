@@ -1,4 +1,4 @@
-package com.badlogic.drop;
+package com.badlogic.drop.src.clases.interfaces;
 
 public interface Comunes {
     int WIDTH = 800;
