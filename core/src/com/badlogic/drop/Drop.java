@@ -17,6 +17,7 @@ public class Drop extends Game {
 
 	@Override
 	public void create() {
+
 		this.setScreen( new PantallaPrincipal(this) );
 	}
 }
